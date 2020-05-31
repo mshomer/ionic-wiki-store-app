@@ -1,0 +1,29 @@
+section {
+  padding: 1rem;
+  color: #3c4043;
+}
+h1 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  margin: 0 0 0.5rem;
+  font-family: 'Google Sans', Roboto, sans-serif;
+}
+p {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.search-btn {
+  margin-top: 2rem;
+
+  ion-button {
+    color: #3c4043;
+    --border-color: #595c5e;
+    height: 55px;
+  }
+
+  ion-thumbnail {
+    position: absolute;
+    right: 0;
+  }
+}

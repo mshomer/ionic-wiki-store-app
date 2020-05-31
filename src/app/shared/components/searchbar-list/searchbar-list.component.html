@@ -1,0 +1,33 @@
+<div class="search-bar-header">
+  <ion-searchbar
+    #ionSearchbar
+    animated
+    showCancelButton="never"
+    clearIcon="undefined"
+    placeholder="What are you looking for?"
+    (ionFocus)="openFullScreenSearchBar()"
+    (input)="onSearchbarChange($event.target.value)"
+  ></ion-searchbar>
+  <ion-button
+    *ngIf="isSearchBarFocus"
+    (click)="closeFullScreenSearchBar()"
+    fill="clear"
+  >
+    <ion-icon name="close"></ion-icon>
+  </ion-button>
+</div>
+<ion-content *ngIf="isSearchBarFocus">
+  <ion-virtual-scroll
+    [items]="items$ | async | filterBy: (filterBy$ | async)"
+    approxItemHeight="200px"
+  >
+    <ion-item *virtualItem="let item" lines="none">
+      <app-product-item
+        [product]="item"
+        [link]="['./', 'store', item.id]"
+        (click)="closeFullScreenSearchBar()"
+      >
+      </app-product-item>
+    </ion-item>
+  </ion-virtual-scroll>
+</ion-content>

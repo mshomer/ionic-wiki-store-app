@@ -1,0 +1,19 @@
+<input
+  type="file"
+  accept="image/*"
+  *ngIf="usePicker"
+  #filePicker
+  (change)="onFileChosen($event)"
+/>
+<ion-button
+  fill="clear"
+  (click)="onOpenCamera()"
+  [attr.disabled]="hideCameraTooltip === false"
+>
+  <ion-icon slot="icon-only" icon="camera-outline"></ion-icon>
+</ion-button>
+<div
+  *ngIf="!hideCameraTooltip"
+  class="blink"
+  (click)="showCameraTooltip()"
+></div>

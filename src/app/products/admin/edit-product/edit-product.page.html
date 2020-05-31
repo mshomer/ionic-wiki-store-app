@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="store/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Product</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onEdit()" [disabled]="!form.valid">
+        <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-grid size-sm="6" offset-sm="3">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" autocorrect>Title</ion-label>
+            <ion-input type="text" formControlName="title"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating"
+              >description
+              <span>
+                ({{form.get('description').value?.length || 0}})</span
+              ></ion-label
+            >
+            <ion-textarea rows="3" formControlName="description"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="!form.get('description').valid && form.get('description').touched"
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item class="error" lines="none">
+            <ion-label>
+              Description must be between 1 and 500 characters
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Price</ion-label>
+            <ion-input type="number" formControlName="price"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Indoors</ion-label>
+            <ion-checkbox formControlName="indoors"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Outdoors</ion-label>
+            <ion-checkbox formControlName="outdoors"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Category</ion-label>
+            <ion-select formControlName="category">
+              <ion-select-option value="Plants">Plants</ion-select-option>
+              <ion-select-option value="Flowers">Flowers</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-row>
+            <ion-col size="10">
+              <ion-item>
+                <ion-label position="floating">Image</ion-label>
+
+                <ion-input
+                  type="file"
+                  formControlName="imageUrl"
+                ></ion-input> </ion-item
+            ></ion-col>
+            <ion-col size="2">
+              <ion-item lines="none">
+                <app-image-picker
+                  (selectedDataImage)="onSelectedImage($event)"
+                ></app-image-picker> </ion-item
+            ></ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="form.controls.imageUrl.value">
+        <ion-col>
+          <ion-img [src]="form.controls.imageUrl.value"></ion-img>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row>
+      <ion-col size-sm="3" offset-sm="3">
+        <ion-item>
+          <ion-label position="floating">From </ion-label>
+          <ion-datetime min="2019-01-01" max="2025-12-31"></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col size-sm="3" offset-sm="3">
+        <ion-item>
+          <ion-label position="floating">To </ion-label>
+          <ion-datetime min="2019-01-02" max="2025-12-31"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row> -->
+    </ion-grid>
+  </form>
+</ion-content>

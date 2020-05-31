@@ -1,0 +1,24 @@
+input[type='file'] {
+  display: none;
+}
+
+.blink {
+  animation: blink-animation 1s steps(5, start) 4;
+  -webkit-animation: blink-animation 1s steps(5, start) 4;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2px;
+  width: 41px;
+  height: 41px;
+  right: 3px;
+}
+@keyframes blink-animation {
+  to {
+    border: 1px solid #eee;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    border: none;
+  }
+}

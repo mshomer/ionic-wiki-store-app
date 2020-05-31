@@ -1,0 +1,67 @@
+.contact-us {
+  .contact-us-header {
+    text-align: center;
+    margin: 2rem 0;
+    h2 {
+      font-size: 32px;
+      span {
+        color: #3f89ff;
+      }
+    }
+    h4 {
+      font-weight: 100;
+      font-size: 18px;
+    }
+  }
+
+  .container-box {
+    border: 1px solid #3f89ff;
+    border-radius: 10px;
+    padding: 8px 16px;
+    margin: 8px;
+    &:first-child {
+      margin-right: 0;
+    }
+    text-align: center;
+
+    ion-icon {
+      font-size: 45px;
+    }
+    .follow-us {
+      padding-top: 11px;
+      padding-bottom: 30px;
+      ion-icon {
+        font-size: 32px;
+      }
+    }
+
+    .content {
+      h4 {
+        color: #3f89ff;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      p {
+        line-height: 26px;
+        margin: 0;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.container-map {
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    span {
+      color: #3f89ff;
+    }
+  }
+
+  .map {
+    border: 0;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+}

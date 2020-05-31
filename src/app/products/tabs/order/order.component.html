@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Order By</ion-title>
+    <ion-content>Choose how to order the products on the shelf</ion-content>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item
+      button
+      *ngFor="let item of orderByItems"
+      [color]="item.value === activeItem ? 'secondary' : null"
+      (click)="onOrderBy(item.value)"
+    >
+      <ion-label>{{ item.text }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "fg4u-ionic-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
