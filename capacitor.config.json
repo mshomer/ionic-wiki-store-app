@@ -1,8 +1,0 @@
-{
-  "appId": "com.wikistore.app",
-  "appName": "wiki.store",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www",
-  "cordova": {}
-}
