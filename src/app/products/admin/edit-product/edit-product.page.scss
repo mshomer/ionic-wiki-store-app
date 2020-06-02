@@ -1,0 +1,15 @@
+app-image-picker {
+  position: absolute;
+  right: -8px;
+  bottom: 0px;
+}
+ion-input[type='file'] {
+  display: none;
+}
+ion-img {
+  width: 250px;
+  margin: auto;
+  border: 3px solid #5d97ff;
+  border-radius: 10px;
+  background: #5d97ff;
+}

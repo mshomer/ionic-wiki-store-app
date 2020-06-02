@@ -1,0 +1,34 @@
+<ion-menu-toggle>
+  <ion-item lines="none" routerLink="/">
+    <ion-label>Home</ion-label>
+  </ion-item>
+  <ion-item lines="none" routerLink="/store">
+    <ion-label>Store</ion-label>
+  </ion-item>
+  <ion-item
+    *ngIf="userIsAuthenticated | async"
+    lines="none"
+    routerLink="/store/admin"
+  >
+    <ion-label>Admin</ion-label>
+  </ion-item>
+  <ion-item lines="none" routerLink="/contact-us">
+    <ion-label>Contact Us</ion-label>
+  </ion-item>
+  <ion-item
+    *ngIf="userIsAuthenticated | async"
+    lines="none"
+    (click)="onSignOut()"
+    button
+  >
+    <ion-label>Logout</ion-label>
+  </ion-item>
+  <ion-item
+    *ngIf="!(userIsAuthenticated | async)"
+    lines="none"
+    routerLink="/auth"
+    button
+  >
+    <ion-label>Sign In</ion-label>
+  </ion-item>
+</ion-menu-toggle>

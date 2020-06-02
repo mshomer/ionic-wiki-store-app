@@ -1,0 +1,31 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="4">
+      <div class="image">
+        <ion-thumbnail>
+          <ion-img
+            [src]="product.imageUrl"
+            (ionError)="$event.target.src = 'assets/images/no-image-found.png'"
+          ></ion-img>
+        </ion-thumbnail>
+      </div>
+    </ion-col>
+    <ion-col class="details" size="7" offset="1">
+      <div>
+        <div class="price">{{ product.price | currency }}</div>
+        <h3>
+          <span class="prefix">{{ product.title }}</span>
+          <span class="suffix"></span>
+        </h3>
+      </div>
+      <div>
+        <ion-button
+          color="primary"
+          routerDirection="backward"
+          [routerLink]="link"
+          >More</ion-button
+        >
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

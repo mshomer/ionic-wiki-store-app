@@ -1,0 +1,12 @@
+.ion-invalid.ion-touched ion-label {
+  color: var(--ion-color-danger);
+}
+
+ion-item.error {
+  color: var(--ion-color-danger);
+  font-size: small;
+  ion-label {
+    align-self: end;
+    margin-top: 2px;
+  }
+}

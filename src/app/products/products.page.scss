@@ -1,0 +1,40 @@
+ion-searchbar,
+ion-item,
+ion-grid,
+.view-by {
+  background-color: #f7f6f5;
+  --ion-background-color: #f7f6f5;
+}
+
+.no-products {
+  color: #302e58;
+  font-family: 'Carmela';
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  display: block;
+}
+
+.view-by {
+  display: flex;
+  justify-content: flex-end;
+
+  ion-icon {
+    font-size: 20px;
+    border: 1px solid #d7d8da;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 5px;
+    color: #666666;
+
+    &.active {
+      background-color: #666666;
+      color: #d7d8da;
+    }
+  }
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}

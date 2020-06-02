@@ -1,0 +1,18 @@
+$gray-color: #5f6368;
+
+ion-toolbar {
+  --ion-toolbar-background: var(--ion-color-primary-contrast);
+  --ion-toolbar-color: $gray-color;
+
+  .title-name {
+    text-align: center;
+    color: $gray-color;
+    font-size: 20px;
+    margin: auto;
+  }
+}
+ion-menu-button,
+ion-button a ion-icon {
+  color: $gray-color;
+  --color: $gray-color;
+}

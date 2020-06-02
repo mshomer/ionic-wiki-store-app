@@ -1,0 +1,21 @@
+.search-bar-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+ion-button {
+  --padding-start: none;
+  --padding-end: 8px;
+}
+
+ion-list,
+ion-item,
+ion-content {
+  --background: white;
+}
+
+ion-item {
+  width: 100%;
+  border: 1px solid #eee;
+  height: 72px;
+}

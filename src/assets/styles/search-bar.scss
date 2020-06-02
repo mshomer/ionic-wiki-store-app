@@ -1,0 +1,18 @@
+.searchbar-input-container {
+  --box-shadow: none;
+  input {
+    border: 1px solid #666666 !important;
+    border-radius: 5px !important;
+  }
+
+  .searchbar-search-icon,
+  .searchbar-cancel-button {
+    background: #1f6797;
+    color: #fff !important;
+    padding: 11px;
+    left: 0 !important;
+    top: 0 !important;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+}

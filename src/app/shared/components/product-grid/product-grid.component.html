@@ -1,0 +1,21 @@
+<ion-thumbnail>
+  <ion-img
+    [src]="product.imageUrl"
+    (ionError)="$event.target.src = 'assets/images/no-image-found.png'"
+  ></ion-img>
+</ion-thumbnail>
+
+<div class="details">
+  <div>
+    <div class="price">{{ product.price | currency }}</div>
+    <h3>
+      <span class="prefix">{{ product.title }}</span>
+      <span class="suffix"></span>
+    </h3>
+  </div>
+  <div>
+    <ion-button color="primary" routerDirection="backward" [routerLink]="link"
+      >More</ion-button
+    >
+  </div>
+</div>

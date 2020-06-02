@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Filter By</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item
+      [color]="activeItem.column === 'indoors' ? 'secondary' : null"
+      (click)="onFilterBy('indoors', true)"
+    >
+      <ion-label>Indoors Plants</ion-label>
+    </ion-item>
+    <ion-item
+      [color]="activeItem.column === 'outdoors' ? 'secondary' : null"
+      (click)="onFilterBy('outdoors', true)"
+    >
+      <ion-label>Outdoors Plants</ion-label>
+    </ion-item>
+    <ion-item
+      (click)="
+        activeItem.column = 'price'; activeItem.value = { lower: 0, upper: 100 }
+      "
+      [color]="activeItem.column === 'price' ? 'secondary' : null"
+    >
+      <ion-label>Price</ion-label>
+      <ion-range
+        *ngIf="activeItem.column === 'price'"
+        dualKnobs="true"
+        min="0"
+        max="100"
+        pin="true"
+        [value]="activeItem.value"
+        (ionChange)="onPriceRangeChange($event.target.value)"
+      >
+        <ion-label slot="start">{{
+          activeItem.value?.lower | currency
+        }}</ion-label>
+        <ion-label slot="end">{{
+          activeItem.value?.upper | currency
+        }}</ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item
+      [color]="activeItem.column === 'category' ? 'secondary' : null"
+      (click)="onFilterByCategoryClicked()"
+    >
+      <ion-label>Categories</ion-label>
+    </ion-item>
+    <ion-item *ngIf="activeItem.column !== undefined" (click)="onClear()">
+      <ion-label>Clear</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
